@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+coverage/
+dist/
+
+server/data/
+
+client/.pw-browsers/
+client/playwright-report/
+client/test-results/
