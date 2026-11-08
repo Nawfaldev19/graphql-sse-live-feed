@@ -1,0 +1,9 @@
+.pw-browsers/
+coverage/
+dist/
+node_modules/
+playwright-report/
+test-results/
+package-lock.json
+# Written by `npm run codegen`; CI compares it byte for byte.
+src/graphql/generated/
