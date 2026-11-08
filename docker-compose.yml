@@ -1,0 +1,24 @@
+# Convenience setup for trying the demo without installing Node.
+# Runs both apps in development mode; it is not a production deployment.
+services:
+  api:
+    build: ./server
+    ports:
+      - "4000:4000"
+    environment:
+      CORS_ORIGIN: http://localhost:5176
+      SIMULATOR: "on"
+    volumes:
+      - api-data:/app/data
+
+  web:
+    build: ./client
+    ports:
+      - "5176:5176"
+    environment:
+      VITE_API_URL: http://localhost:4000/graphql
+    depends_on:
+      - api
+
+volumes:
+  api-data:
