@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const API_PORT = 4100;
-const WEB_PORT = 5177;
+const API_PORT = Number(process.env.E2E_API_PORT ?? 4100);
+const WEB_PORT = Number(process.env.E2E_WEB_PORT ?? 5177);
 
 // Starts the API on a fresh database with the simulator off, so every event in
 // a test is one the test caused.
